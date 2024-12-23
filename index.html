@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking or Drinking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .highlight {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+        }
+        .faded {
+            font-size: 1.2em;
+            color: lightgray;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="firstText" class="highlight">Lust etwas zusammen zu kochen?</div>
+    <button onclick="toggleHighlight()">...oder</button>
+    <div id="secondText" class="faded">Eher Lust erstmal was trinken zu gehen?</div>
+
+    <script>
+        function toggleHighlight() {
+            const firstText = document.getElementById('firstText');
+            const secondText = document.getElementById('secondText');
+
+            if (firstText.classList.contains('highlight')) {
+                firstText.classList.replace('highlight', 'faded');
+                secondText.classList.replace('faded', 'highlight');
+            } else {
+                firstText.classList.replace('faded', 'highlight');
+                secondText.classList.replace('highlight', 'faded');
+            }
+        }
+    </script>
+</body>
+</html>
